@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="view/css/styles.css">
+    <script type="text/javascript" src="view/js/requestHandler.js"></script>
+    <script type="text/javascript" src="view/js/calculator.js"></script>
+    <script type="text/javascript" src="view/js/responseHandler.js"></script>
+    <meta charset="UTF-8">
+    <title>Currency convertor</title>
+  </head>
+  <!-- check if doc is up to date, load data and lastUpdate from xml document -->
+  <body onload="update(); loadData(); loadTime();">
+    <div class = "container">
+      <div class = "header">
+        <div class="topLine"></div>
+        <div class="titleArea title">Currency convertor</div>
+      </div>
+      <div class="main">
+        <div class="convertorArea">
+          <div id="topRate"></div>
+          <div class="inputArea">
+            <select id="leftCurrencyDropdown" class="currencyDropdown" name="leftCurrencySelector" onchange="loadData();">
+              <!-- Fill calling loadData() on load -->
+            </select>
+            <input id = "leftCurrencyInput" type="text" name="leftCurrencyInput" value="" class="textInput" maxlength="16" onkeyup="calculation();">
+            <input type="button" name="swapCurrencyButton" value="SWAP" class="button" onclick="swap();">
+            <select id="rightCurrencyDropdown" class="currencyDropdown" name="rightCurrencySelector" onchange="loadData();">
+              <!-- Fill calling loadData() on load -->
+            </select>
+          </div>
+          <div class="outputArea">
+            <div id="convertedValue1"></div>
+            <div id="convertedValue2"></div>
+          </div>
+        </div>
+        <div class="ratesArea">
+          <div id="tableTitle" class="ratesTitle"></div>
+          <div id="ratesTable" class="tableArea"></div>
+          <div id="infotext"></div>
+          <div id="updatetext"></div>
+        </div>
+        <div class="ratiosArea"></div>
+      </div>
+      <div class="footer">
+      </div>
+    </div>
+  </body>
+</html>
